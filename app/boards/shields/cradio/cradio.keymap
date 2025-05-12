@@ -30,7 +30,7 @@
         };
 
         combo_enter {
-            key-positions = <28 29>;
+            key-positions = <27 28>;
             timeout-ms = <50>;
             bindings = <&kp ENTER>;
         };
@@ -134,7 +134,7 @@
             bindings = <
 &kp Q          &kp W          &kp F         &kp P           &kp B             &kp J          &kp L              &kp U                &kp Y                    &kp SEMICOLON
 &hm LCTRL A    &hm LALT R     &hm LCMD S    &hm LSHIFT T    &kp G             &kp M          &hm RIGHT_SHIFT N  &hm LCMD E           &hm RIGHT_ALT I          &hm RCTRL O
-&kp Z          &kp X          &kp C         &lt 3 D         &kp V             &kp K          &lt 3 H            &as LESS_THAN COMMA  &as GREATER_THAN PERIOD  &as QUESTION SLASH
+&kp Z          &mt LG(X) X    &mt LG(C) C   &lt 3 D         &mt LG(V) V       &mt RCMD K     &lt 3 H            &as LESS_THAN COMMA  &as GREATER_THAN PERIOD  &as QUESTION SLASH
         &ltq 1 BACKSPACE      &lt 2 BACKSPACE    &lt 1 SPACE                  &mt LSHIFT TAB     &trans  &trans
             >;
         };
