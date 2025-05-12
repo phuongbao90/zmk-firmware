@@ -2,6 +2,6 @@
     "scripts": {
         "build-cygnus-left": "west build -d build/cygnus_left -b nice_nano_v2 --pristine -- -DSHIELD=cradio_left",
         "flash-cygnus-left": "west flash -d build/cygnus_left",
-        "build-cygnus-right": "west build -d build/right -b nice_nano_v2 -- -DSHIELD=cygnus"
+        "build-cygnus-right": "west build -d build/cygnus_right -b nice_nano_v2 --pristine -- -DSHIELD=cradio_right"
     }
 }

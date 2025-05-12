@@ -23,51 +23,69 @@
     combos {
         compatible = "zmk,combos";
 
-        left_bkt {
-            bindings = <&kp LBKT>;
-            key-positions = <3 2>;
+        combo_esc {
+            key-positions = <1 2>;
             timeout-ms = <50>;
+            bindings = <&kp ESC>;
         };
 
-        right_bkt {
-            bindings = <&kp RBKT>;
-            key-positions = <6 7>;
+        combo_enter {
+            key-positions = <28 29>;
             timeout-ms = <50>;
+            bindings = <&kp ENTER>;
         };
 
-        left_par {
-            bindings = <&kp LEFT_PARENTHESIS>;
-            key-positions = <12 13>;
+        combo_chord {
+            key-positions = <11 12>;
             timeout-ms = <50>;
+            bindings = <&kp LG(SPACE)>;
         };
 
-        right_par {
-            bindings = <&kp RIGHT_PARENTHESIS>;
-            key-positions = <16 17>;
-            timeout-ms = <50>;
-        };
+        // left_bkt {
+        //     bindings = <&kp LBKT>;
+        //     key-positions = <3 2>;
+        //     timeout-ms = <50>;
+        // };
 
-        left_brace {
-            bindings = <&kp LEFT_BRACE>;
-            key-positions = <23 22>;
-            timeout-ms = <50>;
-        };
+        // right_bkt {
+        //     bindings = <&kp RBKT>;
+        //     key-positions = <6 7>;
+        //     timeout-ms = <50>;
+        // };
 
-        right_brace {
-            bindings = <&kp RIGHT_BRACE>;
-            key-positions = <26 27>;
-            timeout-ms = <50>;
-        };
+        // left_par {
+        //     bindings = <&kp LEFT_PARENTHESIS>;
+        //     key-positions = <12 13>;
+        //     timeout-ms = <50>;
+        // };
 
-        bac {
-            bindings = <&kp BACKSLASH>;
-            key-positions = <4 5>;
-        };
+        // right_par {
+        //     bindings = <&kp RIGHT_PARENTHESIS>;
+        //     key-positions = <16 17>;
+        //     timeout-ms = <50>;
+        // };
 
-        pipe {
-            bindings = <&kp PIPE>;
-            key-positions = <14 15>;
-        };
+        // left_brace {
+        //     bindings = <&kp LEFT_BRACE>;
+        //     key-positions = <23 22>;
+        //     timeout-ms = <50>;
+        // };
+
+        // right_brace {
+        //     bindings = <&kp RIGHT_BRACE>;
+        //     key-positions = <26 27>;
+        //     timeout-ms = <50>;
+        // };
+
+        // bac {
+        //     bindings = <&kp BACKSLASH>;
+        //     key-positions = <4 5>;
+        // };
+
+        // pipe {
+        //     bindings = <&kp PIPE>;
+        //     key-positions = <14 15>;
+        // };
     };
 
     behaviors {
@@ -114,37 +132,37 @@
 
         layer_0 {
             bindings = <
-&kp W                             &kp W                      &kp E                     &kp R             &kp T         &kp Y                     &kp U              &kp I                &kp O                    &hm LG(LS(V)) P
-&hm LEFT_GUI A                    &hm LEFT_ALT S             &hm LCTRL D               &hm LEFT_SHIFT F  &kp G         &kp H                     &hm RIGHT_SHIFT J  &hm RCTRL K          &hm RIGHT_ALT L          &as COLON SEMICOLON
-&kp Z                             &kp X                      &kp C                     &kp V             &kp B         &kp N                     &kp M              &as LESS_THAN COMMA  &as GREATER_THAN PERIOD  &as QUESTION SLASH
-                &ltq 1 BACKSPACE                  &lt 3 TAB               &lt 2 SPACE                    &ltq 2 SPACE  &ltq 3 ENTER  &ltq 4 DEL
+&kp Q          &kp W          &kp F         &kp P           &kp B             &kp J          &kp L              &kp U                &kp Y                    &kp SEMICOLON
+&hm LCTRL A    &hm LALT R     &hm LCMD S    &hm LSHIFT T    &kp G             &kp M          &hm RIGHT_SHIFT N  &hm LCMD E           &hm RIGHT_ALT I          &hm RCTRL O
+&kp Z          &kp X          &kp C         &lt 3 D         &kp V             &kp K          &lt 3 H            &as LESS_THAN COMMA  &as GREATER_THAN PERIOD  &as QUESTION SLASH
+        &ltq 1 BACKSPACE      &lt 2 BACKSPACE    &lt 1 SPACE                  &mt LSHIFT TAB     &trans  &trans
             >;
         };
 
         layer_1{
             bindings = <
-&trans              &trans                &kp UP            &trans     &trans             &bt BT_SEL 0          &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&bt BT_NXT          &kp LEFT              &kp DOWN          &kp RIGHT  &kp C_VOLUME_UP    &kp C_BRI_UP          &bt BT_CLR    &trans        &trans        &trans
-&bt BT_PRV          &out OUT_TOG          &trans            &trans     &kp C_VOLUME_DOWN  &kp C_BRI_DN          &trans        &trans        &trans        &trans
-            &trans                &trans            &trans             &trans             &trans        &trans
+&trans       &trans      &kp UP       &trans      &trans             &kp PG_UP        &kp HOME        &kp UP          &kp END     &trans
+&kp LCTRL    &kp LALT    &kp LCMD     &kp LSHIFT  &trans             &kp PG_DN        &kp LEFT        &kp DOWN        &kp RIGHT   &trans
+&trans       &trans      &trans       &trans      &trans             &kp LC(PG_UP)    &kp LC(PG_DN)   &kp LA(GRAVE)   &trans      &trans
+                         &trans       &trans      &trans             &trans           &trans          &trans
             >;
         };
 
         layer_2 {
             bindings = <
-&kp EXCLAMATION          &kp AT_SIGN           &kp HASH          &kp DOLLAR  &kp PERCENT  &kp CARET          &kp AMPERSAND    &kp STAR                        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
-&kp ESCAPE               &kp CAPSLOCK          &kp HOME          &kp END     &kp UNDER    &kp MINUS          &kp RIGHT_SHIFT  &kp PAGE_UP                     &kp PAGE_DOWN         &kp INSERT
-&kp BACKSPACE            &trans                &trans            &trans      &kp TILDE    &kp GRAVE          &as PLUS EQUAL   &as DOUBLE_QUOTES SINGLE_QUOTE  &as PIPE BACKSLASH    &kp DEL
-                 &trans                &trans            &trans              &trans       &trans     &trans
+&kp EXCLAMATION    &kp AT_SIGN     &kp HASH   &kp DOLLAR   &kp PERCENT               &trans             &trans       &trans       &trans      &trans
+&kp LCTRL          &kp LALT        &kp LCMD   &kp LSHIFT   &as TILDE GRAVE           &as PLUS EQUAL     &kp LPAR     &kp LBRC     &kp LBKT    &as DOUBLE_QUOTES SINGLE_QUOTE
+&kp CARET          &kp AMPERSAND   &kp ASTRK  &kp PIPE     &kp BACKSLASH             &kp TILDE          &kp RPAR     &kp RBRC     &kp RBKT    &as UNDER MINUS
+                   &trans                &trans            &trans                    &kp RIGHT_SHIFT    &trans     &trans
             >;
         };
 
         layer_3 {
             bindings = <
-&kp NUMBER_1          &kp NUMBER_2          &kp NUMBER_3          &kp NUMBER_4  &kp NUMBER_5      &kp NUMBER_6               &kp NUMBER_7    &kp NUMBER_8      &kp NUMBER_9  &kp NUMBER_0
-&kp LG(A)             &kp LG(S)             &kp LG(D)             &kp LG(F)     &kp LEFT_BRACKET  &kp RIGHT_BRACKET          &kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI
-&kp LG(Z)             &kp LG(X)             &kp LG(C)             &kp LG(V)     &kp LEFT_BRACE    &kp RIGHT_BRACE            &kp F1          &kp F2            &kp F3        &kp F4
-              &trans                &trans                &trans                &trans            &trans             &trans
+&kp F9     &kp F10     &kp F11     &kp F12     &kp F15             &kp KP_ASTERISK     &kp NUMBER_7    &kp NUMBER_8   &kp NUMBER_9  &kp PLUS
+&kp F5     &kp F6      &kp F7      &kp F8      &kp F14             &as PLUS EQUAL      &kp NUMBER_4    &kp NUMBER_5   &kp NUMBER_6  &as DOUBLE_QUOTES SINGLE_QUOTE
+&kp F1     &kp F2      &kp F3      &kp F4      &kp F13             &kp NUMBER_0        &kp NUMBER_1    &kp NUMBER_2   &kp NUMBER_3  &kp MINUS
+                &kp LCTRL       &kp LALT       &kp LCMD            &kp LSHIFT        &trans             &trans
             >;
         };
 
