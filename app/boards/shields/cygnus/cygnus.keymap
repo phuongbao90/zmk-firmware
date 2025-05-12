@@ -1,0 +1,159 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+
+&mt {
+    tapping-term-ms = <200>;
+    flavor = "tap-preferred";
+};
+
+&sk {
+    release-after-ms = <2000>;
+    quick-release;
+};
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+
+        esc {
+            bindings = <&kp ESC>;
+            key-positions = <0 1>;
+        };
+
+        to7 {
+            bindings = <&to 7>;
+            key-positions = <0 11>;
+        };
+    };
+
+    behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+
+            quick-tap-ms = <180>;
+            global-quick-tap;
+        };
+
+        ltq: ltq {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LTQ";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "hold-preferred";
+            bindings = <&mo>, <&kp>;
+
+            quick-tap-ms = <180>;
+        };
+
+        as: as {
+            compatible = "zmk,behavior-hold-tap";
+            label = "AUTO_SHIFT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <135>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+        };
+    };
+
+    macros {
+        xiayihang: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RIGHT_ARROW &kp ENTER>;
+            label = "NEW_MACRO";
+        };
+
+
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+&kp CAPS        &kp Q      &kp W         &kp E        &kp R  &kp T  &kp Y  &kp U  &kp I         &kp O    &kp P                &kp BACKSPACE
+&kp LEFT_SHIFT  &kp A      &kp S         &kp D        &kp F  &kp G  &kp H  &kp J  &kp K         &kp L    &as COLON SEMICOLON  &kp ENTER
+&kp LCTRL       &kp Z      &kp X         &kp C        &kp V  &kp B  &kp N  &kp M  &kp COMMA     &kp DOT  &as QUESTION SLASH   &kp RIGHT_SHIFT
+                &kp N1  &kp N2  &kp N3                            &kp N4  &kp N5    &kp N6
+            >;
+        };
+
+        lower_layer {
+            bindings = <
+&none  &kp LG(D)  &kp LA(A)  &kp UP     &kp DELETE  &kp LA(F4)  &trans     &kp N7  &kp N8  &kp N9      &trans      &none
+&none  &kp LC(A)  &kp LEFT   &kp DOWN   &kp RIGHT   &xiayihang  &kp EQUAL  &kp N4  &kp N5  &kp N6      &kp N0      &none
+&none  &kp LC(Z)  &kp LC(X)  &kp RC(C)  &kp LC(V)   &kp LG(V)   &kp MINUS  &kp N1  &kp N2  &kp N3      &kp KP_DOT  &none
+       &trans     &trans     &trans                                                &kp N0  &kp KP_DOT  &trans
+            >;
+        };
+
+        raise_layer {
+            bindings = <
+&trans  &trans     &none       &kp C_VOL_UP  &none       &trans          &kp QUESTION       &kp AMPS  &kp ASTERISK  &kp LPAR   &trans    &trans
+&trans  &kp CAPS   &kp C_PREV  &kp C_PP      &kp C_NEXT  &kp LGUI        &kp COLON          &kp DLLR  &kp PRCNT     &kp CARET  &kp RPAR  &trans
+&trans  &kp LCTRL  &kp TAB     &kp C_VOL_DN  &kp LALT    &kp LEFT_SHIFT  &kp DOUBLE_QUOTES  &kp EXCL  &kp AT        &kp HASH   &trans    &trans
+        &trans     &trans      &trans                                                                 &trans        &trans     &trans
+            >;
+        };
+
+        layer_3 {
+            bindings = <
+&none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+       &none  &none  &none                              &none  &none  &none
+            >;
+        };
+
+        layer_4 {
+            bindings = <
+&none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+       &none  &none  &none                              &none  &none  &none
+            >;
+        };
+
+        layer_5 {
+            bindings = <
+&none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+       &none  &none  &none                              &none  &none  &none
+            >;
+        };
+
+        layer_6 {
+            bindings = <
+&none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+       &none  &none  &none                              &none  &none  &none
+            >;
+        };
+
+        layer_7 {
+            bindings = <
+&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none  &none  &none  &none  &none  &none
+&none  &bt BT_CLR    &none         &none         &none         &to 0         &none  &none  &none  &none  &none  &none
+&none  &none         &none         &none         &none         &none         &none  &none  &none  &none  &none  &none
+       &none         &none         &none                                                   &none  &none  &none
+            >;
+        };
+    };
+};
