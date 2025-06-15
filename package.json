@@ -1,7 +1,7 @@
 {
     "scripts": {
-        "build-cygnus-left": "west build -d build/cygnus_left -b nice_nano_v2 --pristine -- -DSHIELD=cradio_left",
-        "flash-cygnus-left": "west flash -d build/cygnus_left",
-        "build-cygnus-right": "west build -d build/cygnus_right -b nice_nano_v2 --pristine -- -DSHIELD=cradio_right"
-    }
+        "build-cygnus-l": "cd app && west build -d build/cygnus_left -b nice_nano_v2 --pristine -- -DSHIELD=cradio_left   && cd ..",
+        "build-cygnus-r": "cd app && west build -d build/cygnus_right -b nice_nano_v2 --pristine -- -DSHIELD=cradio_right && cd .."
+    },
+    "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
 }

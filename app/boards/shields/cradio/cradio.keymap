@@ -19,7 +19,7 @@
 #define MEH LS(LC(LALT))
 
 &mt {
-    tapping-term-ms = <200>;
+    tapping-term-ms = <180>;
     flavor = "tap-preferred";
 };
 
@@ -105,7 +105,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <180>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
@@ -118,7 +118,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "LTQ";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <180>;
             quick_tap_ms = <0>;
             flavor = "hold-preferred";
             bindings = <&mo>, <&kp>;
@@ -144,16 +144,16 @@
 
         layer_0 {
             bindings = <
-&kp Q          &kp W          &kp F         &kp P           &kp B             &kp J          &kp L              &kp U                  &kp Y                    &as COLON SEMICOLON
-&hm LCTRL A    &hm LALT R     &hm LCMD S    &hm LSHIFT T    &hm HYP G         &hm HYP M      &hm RIGHT_SHIFT N  &hm LCMD E             &hm RIGHT_ALT I          &hm RCTRL O
-&kp Z          &mt LG(X) X    &mt LG(C) C   &lt NUM_L D     &mt LG(V) V       &mt RCMD K     &lt NUM_L H          &as LESS_THAN COMMA  &as GREATER_THAN PERIOD  &as QUESTION SLASH
+&kp Q          &kp W          &kp F         &kp P           &kp B                     &kp J          &kp L              &kp U                  &kp Y                    &as COLON SEMICOLON
+&hm LCTRL A    &hm LALT R     &hm LCMD S    &hm LSHIFT T    &hm HYP G                 &hm HYP M      &hm RIGHT_SHIFT N  &hm LCMD E             &hm RIGHT_ALT I          &hm RCTRL O
+&kp Z          &mt LG(X) X    &mt LG(C) C   &lt NUM_L D     &mt LG(V) V               &hm RCMD K     &lt NUM_L H        &as LESS_THAN COMMA    &as GREATER_THAN PERIOD  &as QUESTION SLASH
         &ltq 1 BACKSPACE      &lt SYM_L BACKSPACE    &lt NAV_L SPACE                  &mt LSHIFT TAB     &trans  &trans
             >;
         };
 
         layer_1{
             bindings = <
-&trans        &trans         &kp UP           &trans      &trans             &kp PG_UP        &kp HOME        &kp UP          &kp END     &trans
+&trans        &trans         &kp UP           &trans      &trans             &kp PG_UP        &kp HOME        &kp UP          &kp END     &kp INSERT
 &kp LCTRL     &kp LALT       &kp LCMD         &kp LSHIFT  &trans             &kp PG_DN        &kp LEFT        &kp DOWN        &kp RIGHT   &trans
 &kp LS(LCTRL) &kp LS(LALT)   &kp LS(LCMD)     &trans      &trans             &kp LC(PG_UP)    &kp LC(PG_DN)   &kp LA(GRAVE)   &trans      &trans
                          &trans       &trans      &trans             &trans           &trans          &trans
@@ -162,19 +162,19 @@
 
         layer_2 {
             bindings = <
-&kp EXCLAMATION    &kp AT_SIGN     &kp HASH   &kp DOLLAR   &kp PERCENT               &trans             &trans       &trans       &trans      &as COLON SEMICOLON
-&kp LCTRL          &kp LALT        &kp LCMD   &kp LSHIFT   &as TILDE GRAVE           &as PLUS EQUAL     &kp LPAR     &kp LBRC     &kp LBKT    &as DOUBLE_QUOTES SINGLE_QUOTE
-&kp CARET          &kp AMPERSAND   &kp ASTRK  &kp PIPE     &kp BACKSLASH             &kp TILDE          &kp RPAR     &kp RBRC     &kp RBKT    &as UNDER MINUS
-                   &trans                &trans            &trans                    &kp RIGHT_SHIFT    &trans     &trans
+&kp EXCLAMATION    &kp AT_SIGN     &kp HASH   &kp DOLLAR   &kp PERCENT               &trans             &trans          &trans        &trans        &as COLON SEMICOLON
+&kp LCTRL          &kp LALT        &kp LCMD   &kp LSHIFT   &as TILDE GRAVE           &as PLUS EQUAL     &hm RSHFT LPAR  &hm LCMD LBRC &hm RALT LBKT &as DOUBLE_QUOTES SINGLE_QUOTE
+&kp CARET          &kp AMPERSAND   &kp ASTRK  &kp PIPE     &kp BACKSLASH             &kp TILDE          &kp RPAR        &kp RBRC      &kp RBKT      &as UNDER MINUS
+                   &trans                &trans            &trans                    &kp RIGHT_SHIFT    &kp RCTRL       &trans
             >;
         };
 
         layer_3 {
             bindings = <
-&kp F9     &kp F10     &kp F11     &kp F12     &kp F15             &kp KP_ASTERISK     &kp NUMBER_7    &kp NUMBER_8   &kp NUMBER_9  &kp PLUS
-&kp F5     &kp F6      &kp F7      &kp F8      &kp F14             &as PLUS EQUAL      &kp NUMBER_4    &kp NUMBER_5   &kp NUMBER_6  &as DOUBLE_QUOTES SINGLE_QUOTE
-&kp F1     &kp F2      &kp F3      &kp F4      &kp F13             &kp NUMBER_0        &kp NUMBER_1    &kp NUMBER_2   &kp NUMBER_3  &kp MINUS
-                &kp LCTRL       &kp LALT       &kp LCMD            &kp LSHIFT        &trans             &trans
+&kp F9        &kp F7      &kp F8      &kp F9       &kp F12                         &kp KP_ASTERISK     &kp NUMBER_7        &kp NUMBER_8      &kp NUMBER_9      &kp PLUS
+&hm LCTRL F5  &hm LALT F4 &hm LCMD F5 &hm LSHFT F6 &kp F11                         &as PLUS EQUAL      &hm RSHFT NUMBER_4  &hm LCMD NUMBER_5 &hm RALT NUMBER_6 &hm RCTRL SINGLE_QUOTE
+&kp F1        &kp F1      &kp F2      &kp F3       &kp F10                         &kp NUMBER_0        &kp NUMBER_1        &kp NUMBER_2      &kp NUMBER_3      &kp MINUS
+                          &kp LCTRL   &kp LALT     &kp LCMD                        &kp LSHIFT          &kp LCMD            &kp LALT
             >;
         };
 
